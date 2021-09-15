@@ -42,7 +42,7 @@ function generateFizzBuzz(fizzValue, buzzValue) {
 function viewData(numbers) {
 
     let tableBody = document.getElementById("results");
-    let templateRow = document.getElementById("fizzBuzzData")
+    let templateRow = document.getElementById("fizzBuzzTemplate")
 
     // clear the table first
     tableBody.innerHTML = "";
