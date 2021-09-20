@@ -8,7 +8,7 @@ function getValues() {
    buzzValue = parseInt(buzzValue);
 
    if (Number.isInteger(fizzValue) && Number.isInteger(buzzValue)) {
-       numbers = generateFizzBuzz(fizzValue, buzzValue);
+       numbers = generateFizzBuzzC(fizzValue, buzzValue);
        console.log("2", numbers);
 
        viewData(numbers);
@@ -36,6 +36,49 @@ function generateFizzBuzz(fizzValue, buzzValue) {
         }
     }
     return numbers;
+}
+
+function generateFizzBuzzB(fizzValue, buzzValue) {
+    let returnArray = [];
+    let Fizz  = false;
+    let Buzz = false;
+
+    for (let index = 1; index <= 100; index++) {
+        
+        Fizz = index % fizzValue == 0;
+        Buzz = index % buzzValue == 0;
+
+        switch(true) {
+            case Fizz && Buzz: {
+                returnArray.push('FizzBuzz');
+                break;
+            }
+            case Fizz: {
+                returnArray.push('Fizz');
+                break;
+            }
+            case Buzz: {
+                returnArray.push('Buzz');
+                break;
+            }
+            default: {
+                returnArray.push(index);
+                break;
+            }
+        }
+    }
+    return returnArray;
+}
+
+function generateFizzBuzzC(fizzValue, buzzValue) {
+    let returnArray = [];
+
+    for (let index = 1; index <= 100; index++) {
+        let value = ((index % fizzValue == 0 ? 'Fizz' : '') + (index % buzzValue == 0 ? 'Buzz' : '') || index);
+        returnArray.push(value);
+    }
+
+    return returnArray;
 }
 
 // view function 
