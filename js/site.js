@@ -8,8 +8,7 @@ function getValues() {
    buzzValue = parseInt(buzzValue);
 
    if (Number.isInteger(fizzValue) && Number.isInteger(buzzValue)) {
-       numbers = generateFizzBuzz(fizzValue, buzzValue);
-       console.log("2", numbers);
+       let numbers = generateFizzBuzz(fizzValue, buzzValue);
 
        viewData(numbers);
    } else {
@@ -42,13 +41,13 @@ function generateFizzBuzz(fizzValue, buzzValue) {
 function viewData(numbers) {
 
     let tableBody = document.getElementById("results");
-    let templateRow = document.getElementById("fizzBuzzData")
+    let templateRow = document.getElementById("fizzBuzzTemplate")
 
     // clear the table first
     tableBody.innerHTML = "";
 
     for(let i = 0; i < numbers.length; i+=5) {
-        const tableRow = document.importNode(templateRow.content, true);
+        let tableRow = document.importNode(templateRow.content, true);
 
         rowCols = tableRow.querySelectorAll("td");
         
